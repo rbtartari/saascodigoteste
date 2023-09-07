@@ -15,7 +15,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import Badge from "@material-ui/core/Badge";
 import Box from "@material-ui/core/Box";
-
+import AccountTreeOutlinedIcon from "@material-ui/icons/AccountTreeOutlined";
 import { i18n } from "../../translate/i18n";
 
 import api from "../../services/api";
@@ -352,5 +352,48 @@ const TicketListItemCustom = ({ ticket }) => {
     </React.Fragment>
   );
 };
-
+			{ticket.whatsappId && (
+            <Tooltip title={`${whatsAppName}`}>
+              <WhatsAppIcon
+                fontSize="small"
+                style={{
+                marginRight: 5,
+                position: "inherit",
+                borderRadius: 2,
+                color: "#7d79f2"
+                }}
+   			  />
+   			</Tooltip>
+			)}
+            <Tooltip title={ticket.queue?.name || "Sem Fila"}>
+              <AccountTreeOutlinedIcon
+                fontSize="small"
+                style={{ 
+                marginRight: 5,
+                color: ticket.queue?.color || "#7C7C7C"
+                }}
+              />
+            </Tooltip>
+		  			{ticket.whatsappId && (
+            <Tooltip title={`${whatsAppName}`}>
+              <WhatsAppIcon
+                fontSize="small"
+                style={{
+                marginRight: 5,
+                position: "inherit",
+                borderRadius: 2,
+                color: "#7d79f2"
+                }}
+   			  />
+   			</Tooltip>
+			)}
+            <Tooltip title={ticket.queue?.name || "Sem Fila"}>
+              <AccountTreeOutlinedIcon
+                fontSize="small"
+                style={{ 
+                marginRight: 5,
+                color: ticket.queue?.color || "#7C7C7C"
+                }}
+              />
+            </Tooltip>
 export default TicketListItemCustom;
